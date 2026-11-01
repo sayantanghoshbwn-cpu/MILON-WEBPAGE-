@@ -55,14 +55,14 @@ export default function AboutUs({ onContactClick }) {
               />
               <div>
                 <span className="sign font-bold block">{COMPANY_INFO.founder}</span>
-                <span className="text-xs text-stone-500 block">— Founder & CEO, Esyus Technology</span>
+                <span className="text-xs text-stone-500 block">— Founder & CEO, Esyus Technologies</span>
               </div>
             </figcaption>
           </figure>
 
           <a className="feature" href="#applications">
             <span className="feature__row">
-              <span className="feature__num">4+</span>
+              <span className="feature__num">5+</span>
               <span className="feature__label">Software applications ready for deployment</span>
               <span className="ibtn ibtn--bare">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -84,8 +84,16 @@ export default function AboutUs({ onContactClick }) {
             </h2>
             <div className="sec-head__side">
               <p className="lead">
-                {COMPANY_INFO.name} was established to solve one critical problem: businesses losing hours of productivity to cloud server outages and complex software.
+                {COMPANY_INFO.name} was established to solve one critical problem: businesses losing hours of productivity to cloud server outages and complicated tools.
               </p>
+              <div className="p-3.5 rounded-xl bg-[var(--soft)] border-l-4 border-l-[var(--c1)] border border-[var(--line)] space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[var(--c1)] font-semibold block">
+                  Core Engineering Motive
+                </span>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-medium italic leading-relaxed">
+                  “Transforming complex enterprise technology into simple, intuitive, and easy-to-use software that empowers everyday business.”
+                </p>
+              </div>
               <button className="link" onClick={onContactClick}>
                 Speak with our engineering desk →
               </button>
@@ -97,7 +105,7 @@ export default function AboutUs({ onContactClick }) {
             <div className="lg:col-span-5 rounded-[var(--r)] p-8 bg-[var(--dark)] text-[var(--bg)] flex flex-col justify-between shadow-2xl relative overflow-hidden group">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=900"
-                alt="Esyus Technology Team Office"
+                alt="Esyus Technologies Team Office"
                 className="absolute inset-0 w-full h-full object-cover opacity-15 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark)] via-[var(--dark)]/90 to-[var(--dark)]/70 pointer-events-none" />

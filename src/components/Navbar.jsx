@@ -88,11 +88,11 @@ export default function Navbar({ onDownloadClick, onContactClick }) {
               e.preventDefault();
               scrollTo('home');
             }}
-            aria-label="Esyus Technology Home"
+            aria-label="Esyus Technologies Home"
           >
             <img
               src="/logo-horizontal.png"
-              alt="Esyus Technology"
+              alt="Esyus Technologies"
               className="h-9 sm:h-10 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-[1.02]"
             />
             <span className="hidden xl:inline-flex items-center text-[9.5px] tracking-widest uppercase text-[var(--muted)] font-mono border-l border-[var(--line)] pl-2.5 ml-0.5 whitespace-nowrap">
@@ -209,7 +209,7 @@ export default function Navbar({ onDownloadClick, onContactClick }) {
           <div className="space-y-6">
             <div className="flex items-center justify-between border-b border-[var(--line)] pb-4">
               <span className="text-xs uppercase tracking-widest text-[var(--muted)] font-mono">
-                Esyus Technology Navigation
+                Esyus Technologies Navigation
               </span>
               <span className="text-xs font-mono text-[var(--c1)] font-semibold">
                 10 Core Sections
@@ -239,7 +239,7 @@ export default function Navbar({ onDownloadClick, onContactClick }) {
             {/* Quick App Downloads in Mobile Drawer */}
             <div className="p-4 rounded-2xl bg-white border border-[var(--line)] space-y-3">
               <span className="text-xs uppercase tracking-wider text-[var(--muted)] font-mono block">
-                Quick Download Installers
+                Software Ecosystem (Coming Soon)
               </span>
               <div className="flex flex-wrap gap-2">
                 {PRODUCTS.map((prod) => (
@@ -250,8 +250,11 @@ export default function Navbar({ onDownloadClick, onContactClick }) {
                     }}
                     className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-[var(--soft)] hover:bg-[var(--line)] text-[var(--ink)] transition-colors flex items-center gap-1.5"
                   >
+                    {prod.logo && (
+                      <img src={prod.logo} alt={prod.name} className="w-3.5 h-3.5 object-contain" />
+                    )}
                     <span>{prod.name}</span>
-                    <span className="text-[10px] text-[var(--muted)]">({prod.downloadFile})</span>
+                    <span className="text-[10px] font-mono text-[var(--c1)] font-semibold">Coming Soon</span>
                   </button>
                 ))}
               </div>
@@ -272,7 +275,7 @@ export default function Navbar({ onDownloadClick, onContactClick }) {
                   else scrollTo('download');
                 }}
               >
-                <span>Download Packages</span>
+                <span>Explore Packages</span>
               </button>
               <button
                 className="btn btn--line btn--sm flex-1 sm:flex-none justify-center"

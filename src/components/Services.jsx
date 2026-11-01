@@ -6,17 +6,18 @@ export default function Services({ onSelectService, onEnquireService }) {
     {
       id: "desktop-dev",
       serviceIndex: 4, // Desktop Dev in SERVICES
-      tab: "Offline Billing Systems",
+      tab: "Application Development Systems",
       tone: "tone-1",
-      image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=900",
+      image: "/finance-flow-logo.png",
+      isLogo: true,
       num: "01",
       meta: "Windows 10 / 11 · 100% Offline Autonomy",
-      lead: "High-performance Windows billing, inventory, and management software that works 100% offline with zero cloud lag.",
+      lead: "High-performance Windows desktop applications, inventory suites, and management systems that work 100% offline with zero cloud lag.",
       uiTop: "Runtime: Bare-Metal Win32 / Electron",
-      uiTitle: "Finance Flow POS Engine",
+      uiTitle: "Finance Flow Desktop Suite",
       row1: ["Startup Latency", "<0.2 seconds instant"],
       row2: ["Local Storage", "Encrypted SQLite DB"],
-      row3: ["Hardware Interfacing", "Thermal 2\"/3\" & Laser A4"]
+      row3: ["Hardware Support", "Thermal 2\"/3\" & Laser A4"]
     },
     {
       id: "website-dev",
@@ -107,23 +108,25 @@ export default function Services({ onSelectService, onEnquireService }) {
               className={`folder ${item.tone}`}
               data-item={item.id}
             >
-              <div className="folder__tab">
-                <span className="folder__num">{item.num}</span>
-                <span className="folder__title">{item.tab}</span>
-              </div>
+              <div className="folder__in">
+                <div className="folder__tab">
+                  <span className="folder__tab-num">{item.num}</span>
+                  <span className="folder__tab-title">{item.tab}</span>
+                </div>
 
-              <div className="folder__body">
-                <div className="folder__in">
+                <div className="folder__body">
                   {/* Left Column: Details & Actions */}
                   <div className="folder__copy">
-                    <span className="folder__meta">{item.meta}</span>
-                    <h3 className="folder__h3">{serviceObj.title}</h3>
-                    <p className="folder__lead">{item.lead}</p>
+                    <div>
+                      <span className="folder__meta">{item.meta}</span>
+                      <h3 className="folder__h3">{serviceObj.title}</h3>
+                      <p className="folder__lead">{item.lead}</p>
+                    </div>
 
                     <div className="folder__actions">
                       <button
                         type="button"
-                        className="btn"
+                        className="btn btn--sm"
                         onClick={() => onSelectService(serviceObj)}
                       >
                         <span>View specifications</span>
@@ -143,33 +146,80 @@ export default function Services({ onSelectService, onEnquireService }) {
                   </div>
 
                   {/* Right Column: High-Res Real Photography & Floating Live Diagnostics UI */}
-                  <figure className="folder__photo overflow-hidden relative group">
-                    <img
-                      src={item.image}
-                      alt={item.tab}
-                      className="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
-                    
-                    <div className="ui">
-                      <div className="ui__top">
-                        <span>{item.uiTop}</span>
-                        <span className="ui__live">Ready</span>
+                  <figure className={`folder__photo overflow-hidden relative group ${item.isLogo ? 'folder__photo--logo' : ''}`}>
+                    {item.isLogo ? (
+                      <div className="w-full h-full flex flex-col justify-between p-3.5 sm:p-5 bg-white relative">
+                        {/* Top: Crisp Finance Flow Brand Logo Card */}
+                        <div className="flex-1 flex flex-col items-center justify-center p-3 sm:p-4 bg-gradient-to-b from-stone-50/90 to-white rounded-xl border border-stone-200/70 mb-3 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)]">
+                          <div className="w-full flex items-center justify-between mb-1.5 px-0.5">
+                            <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--c1)] font-bold flex items-center gap-1.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[var(--c1)] animate-pulse" />
+                              Official Flagship Software
+                            </span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200/60">
+                              v2.4.0
+                            </span>
+                          </div>
+                          <div className="w-full flex items-center justify-center py-2 sm:py-3">
+                            <img
+                              src={item.image}
+                              alt="Finance Flow"
+                              className="h-14 sm:h-16 md:h-18 w-auto max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-sm"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Bottom: Live Engine Diagnostics Card */}
+                        <div className="ui ui--inline">
+                          <div className="ui__top">
+                            <span>{item.uiTop}</span>
+                            <span className="ui__live">Ready</span>
+                          </div>
+                          <p className="ui__title">{item.uiTitle}</p>
+                          <div className="ui__row">
+                            <span>{item.row1[0]}</span>
+                            <span>{item.row1[1]}</span>
+                          </div>
+                          <div className="ui__row">
+                            <span>{item.row2[0]}</span>
+                            <span>{item.row2[1]}</span>
+                          </div>
+                          <div className="ui__row">
+                            <span>{item.row3[0]}</span>
+                            <span>{item.row3[1]}</span>
+                          </div>
+                        </div>
                       </div>
-                      <p className="ui__title">{item.uiTitle}</p>
-                      <div className="ui__row">
-                        <span>{item.row1[0]}</span>
-                        <span>{item.row1[1]}</span>
-                      </div>
-                      <div className="ui__row">
-                        <span>{item.row2[0]}</span>
-                        <span>{item.row2[1]}</span>
-                      </div>
-                      <div className="ui__row">
-                        <span>{item.row3[0]}</span>
-                        <span>{item.row3[1]}</span>
-                      </div>
-                    </div>
+                    ) : (
+                      <>
+                        <img
+                          src={item.image}
+                          alt={item.tab}
+                          className="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
+                        
+                        <div className="ui">
+                          <div className="ui__top">
+                            <span>{item.uiTop}</span>
+                            <span className="ui__live">Ready</span>
+                          </div>
+                          <p className="ui__title">{item.uiTitle}</p>
+                          <div className="ui__row">
+                            <span>{item.row1[0]}</span>
+                            <span>{item.row1[1]}</span>
+                          </div>
+                          <div className="ui__row">
+                            <span>{item.row2[0]}</span>
+                            <span>{item.row2[1]}</span>
+                          </div>
+                          <div className="ui__row">
+                            <span>{item.row3[0]}</span>
+                            <span>{item.row3[1]}</span>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </figure>
                 </div>
               </div>

@@ -42,8 +42,8 @@ export default function Footer({ onOpenPrivacy, onOpenTerms, onSelectService, on
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
               <div>
-                <small>Install Today</small>
-                <b>Download .EXE</b>
+                <small>Release Status</small>
+                <b>Coming Soon</b>
               </div>
             </a>
 
@@ -67,16 +67,13 @@ export default function Footer({ onOpenPrivacy, onOpenTerms, onSelectService, on
             <div className="flex items-center gap-3">
               <img
                 src="/logo-horizontal-white.png"
-                alt="Esyus Technology"
+                alt="Esyus Technologies"
                 className="h-10 sm:h-11 w-auto object-contain"
               />
-              <span className="text-[10px] tracking-wider uppercase text-stone-400 font-mono border-l border-white/20 pl-2.5">
-                Pvt. Ltd.
-              </span>
             </div>
 
             <p className="text-xs text-[var(--fm)] leading-relaxed max-w-sm">
-              Esyus Technology Pvt. Ltd. builds robust, offline-capable desktop billing suites and tailored Android applications designed to operate without internet dependency or recurring lock-ins.
+              Esyus Technologies builds robust, offline-capable desktop billing suites and tailored Android applications designed to operate without internet dependency or recurring lock-ins.
             </p>
 
             <div className="text-[11px] text-[var(--fm)] space-y-1 font-mono">
@@ -99,14 +96,18 @@ export default function Footer({ onOpenPrivacy, onOpenTerms, onSelectService, on
                     onClick={() => onSelectProduct(prod)}
                     className="text-[var(--fm)] hover:text-white transition-colors text-left flex items-center gap-2 cursor-pointer"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--c1)]" />
+                    {prod.logo ? (
+                      <img src={prod.logo} alt={prod.name} className="w-3.5 h-3.5 object-contain shrink-0" />
+                    ) : (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--c1)]" />
+                    )}
                     <span>{prod.name}</span>
                   </button>
                 </li>
               ))}
               <li className="pt-1">
                 <a href="#download" className="text-[var(--c3)] hover:underline font-semibold block">
-                  Download All Packages →
+                  Explore Software Packages →
                 </a>
               </li>
             </ul>
@@ -197,7 +198,7 @@ export default function Footer({ onOpenPrivacy, onOpenTerms, onSelectService, on
         {/* Bottom Base Bar */}
         <div className="foot__base pt-8 border-t border-[var(--fl)] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[var(--fm)]">
           <div className="text-center md:text-left">
-            © 2026–2027 <strong className="text-white">Esyus Technology Pvt. Ltd.</strong> All rights reserved. Registered under domain <span className="text-[var(--c3)] font-mono">{COMPANY_INFO.domain}</span>.
+            © 2026–2027 <strong className="text-white">Esyus Technologies</strong>. All rights reserved. Registered under domain <span className="text-[var(--c3)] font-mono">{COMPANY_INFO.domain}</span>.
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6">
